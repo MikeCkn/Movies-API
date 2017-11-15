@@ -13,11 +13,20 @@ mongoose.connect(config.mongoUrl, () => {
 
 const app = express();
 
-app.get('/', function(req, res, next) {
-    console.log('the response will be sent by the next function ...');
-    next();
+app.get('/', function(req, res) {
+    res.send('Home !')
+});
+
+app.get('/exampleA', function(req, res) {
+    res.send('Hello from A !')
+})
+
+app.get('/exampleB', function(req, res, next) {
+    console.log('Test with next !')
+    next()
 }, function(req, res) {
-    res.send('Hello !');
+
+    res.send('Hello from B !')
 });
 
 // app.use(router);
