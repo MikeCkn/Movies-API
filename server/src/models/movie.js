@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const newMovie = new.mongoose.Schema({
+const newMovie = new mongoose.Schema({
     title: {
         type: 'String',
         required: true
@@ -20,4 +20,4 @@ const newMovie = new.mongoose.Schema({
     versionKey: false
 });
 
-module.exports = mongoose.model('Movies', newMovie);
+module.exports = mongoose.model('Movie', newMovie);
